@@ -11,7 +11,7 @@ import ProfileButton from "./ui/ProfileButton";
 const routes = [
   {
     href: "/",
-    label: "About Me",
+    label: "About",
   },
   {
     href: "/",
@@ -31,20 +31,20 @@ const routes = [
   },
   {
     href: "/",
-    label: "Contact Me",
+    label: "Contact",
   },
 ];
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
   return (
-    <header className="sm:sticky sm:top-0 z-30 dark:bg-black bg-white sm:flex sm:justify-between border-b py-3 px-4">
+    <header className="sm:sticky sm:top-0 z-30 dark:bg-black bg-white sm:flex sm:justify-between border-b py-3 sm:px-4">
       <Container>
         <div className="w-full flex h-12 px-4 sm:px-6 lg:px-8 justify-between relative">
           <div className="flex items-center">
             <Sheet>
               <SheetTrigger>
-                <Menu className="h-6 w-6 md:hidden" />
+                <Menu className="h-6 w-6 lg:hidden" />
               </SheetTrigger>
               <SheetContent side="left">
                 <nav className="flex flex-col gap-y-4">
@@ -60,11 +60,11 @@ const Header = () => {
                 </nav>
               </SheetContent>
             </Sheet>
-            <Link href="/" className="ml-4 lg:ml-0">
+            <Link href="/" className="hidden md:block ml-4 lg:ml-0">
               <h1 className="text-xl font-bold">Pradeeshwar</h1>
             </Link>
           </div>
-          <nav className="mx-6 hidden md:flex items-center space-x-4 lg:space-x-6 ">
+          <nav className="mx-4 hidden lg:flex items-center space-x-4 lg:space-x-6">
             {routes.map((route, i) => (
               <Button key={i} asChild variant="ghost">
                 <Link
