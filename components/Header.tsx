@@ -1,44 +1,76 @@
 "use client";
 
-import Link from "next/link";
+import { useRef, useEffect } from "react";
 import Container from "./ui/container";
 import { Button } from "./ui/button";
 import { Sun, Moon, Menu } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-import ProfileButton from "./ui/ProfileButton";
+import { Link } from "react-scroll/modules";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const routes = [
   {
-    href: "/",
+    href: "about",
     label: "About",
   },
   {
-    href: "/",
+    href: "education",
     label: "Education",
   },
   {
-    href: "/",
+    href: "skills",
     label: "Skills",
   },
   {
-    href: "/",
+    href: "projects",
     label: "Projects",
   },
   {
-    href: "/",
+    href: "achievements",
     label: "Achievements",
   },
   {
-    href: "/",
+    href: "contact",
     label: "Contact",
   },
 ];
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
+
+  // Gsap animation
+  gsap.registerPlugin(ScrollTrigger);
+
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    const showNav = gsap
+      .fromTo(
+        navbarRef.current,
+        { opacity: 0, duration: 1.5 },
+        { opacity: 1, duration: 0.4 }
+      )
+      .progress(1);
+    ScrollTrigger.create({
+      start: "top top",
+      end: "max",
+      onUpdate: (self) => {
+        if (self.direction === -1) {
+          showNav.play();
+        } else {
+          showNav.reverse();
+        }
+      },
+    });
+  }, []);
+
   return (
-    <header className="sm:sticky sm:top-0 z-30 dark:bg-black bg-white sm:flex sm:justify-between border-b py-3 sm:px-4">
+    <header
+      ref={navbarRef}
+      className="sticky top-0 z-30 dark:bg-black bg-white sm:flex sm:justify-between border-b py-3 sm:px-4"
+    >
       <Container>
         <div className="w-full flex h-12 px-4 sm:px-6 lg:px-8 justify-between relative">
           <div className="flex items-center">
@@ -51,7 +83,11 @@ const Header = () => {
                   {routes.map((route, i) => (
                     <Link
                       key={i}
-                      href={route.href}
+                      to={route.href}
+                      smooth={true}
+                      duration={500}
+                      spy={true}
+                      offset={0}
                       className="block px-2 py-1 text-lg"
                     >
                       {route.label}
@@ -60,16 +96,29 @@ const Header = () => {
                 </nav>
               </SheetContent>
             </Sheet>
-            <Link href="/" className="hidden md:block ml-4 lg:ml-0">
-              <h1 className="text-xl font-bold">Pradeeshwar</h1>
+            <Link
+              to="hero"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-73}
+              className="hidden md:block ml-4 lg:ml-0"
+            >
+              <h1 className="text-xl font-bold hover:cursor-pointer">
+                Pradeeshwar
+              </h1>
             </Link>
           </div>
           <nav className="mx-4 hidden lg:flex items-center space-x-4 lg:space-x-6">
             {routes.map((route, i) => (
               <Button key={i} asChild variant="ghost">
                 <Link
-                  href={route.href}
-                  className="text-sm font-medium transition-colors"
+                  to={route.href}
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  offset={0}
+                  className="text-sm font-medium transition-colors hover:cursor-pointer hover:text-gray-900 dark:hover:text-gray-100"
                 >
                   {route.label}
                 </Link>
@@ -88,7 +137,6 @@ const Header = () => {
               <Moon className="absolute h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle Theme</span>
             </Button>
-            <ProfileButton />
           </div>
         </div>
       </Container>
