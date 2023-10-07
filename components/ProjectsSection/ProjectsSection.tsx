@@ -1,8 +1,38 @@
+import React from "react";
+import Project from "./Project";
+import projectImg from "@/public/images/project.jpg";
+
+export const projectsData = [
+  {
+    title: "Scribble Sphere",
+    description:
+      "A web app for bloggers to write and share their thoughts with the world.",
+    tags: ["Vue JS", "Flask", "SQLite", "Redis"],
+    githubLink: "github.com",
+    imageUrl: projectImg,
+  },
+  {
+    title: "Portfolio",
+    description:
+      "My portfolio website built with Next JS, Tailwind CSS and TypeScript.",
+    tags: ["Next JS", "Tailwind CSS", "TypeScript"],
+    githubLink: "github.com",
+    imageUrl: projectImg,
+  },
+];
+
 const ProjectsSection = () => {
   return (
-    <div className="h-screen flex flex-col items-center justify-center -mt-[73px] pt-[73px]">
-      <p>Projects</p>
-    </div>
+    <section id="projects" className="flex h-screen flex-col items-center justify-evenly scroll-mt-10">
+      <p className="text-2xl tracking-widest font-bold">PROJECTS</p>
+      <div>
+        {projectsData.map((project, i) => (
+          <React.Fragment key={i}>
+            <Project {...project} />
+          </React.Fragment>
+        ))}
+      </div>
+    </section>
   );
 };
 
