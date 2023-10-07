@@ -15,14 +15,14 @@ const routes = [
     href: "about",
     label: "About",
   },
-  {
-    href: "education",
-    label: "Education",
-  },
-  {
-    href: "skills",
-    label: "Skills",
-  },
+  // {
+  //   href: "education",
+  //   label: "Education",
+  // },
+  // {
+  //   href: "skills",
+  //   label: "Skills",
+  // },
   {
     href: "projects",
     label: "Projects",
@@ -40,35 +40,35 @@ const routes = [
 const Header = () => {
   const { theme, setTheme } = useTheme();
 
-  // Gsap animation
-  gsap.registerPlugin(ScrollTrigger);
+  // // Gsap animation
+  // gsap.registerPlugin(ScrollTrigger);
 
-  const navbarRef = useRef(null);
+  // const navbarRef = useRef(null);
 
-  useEffect(() => {
-    const showNav = gsap
-      .fromTo(
-        navbarRef.current,
-        { opacity: 0, duration: 1.5 },
-        { opacity: 1, duration: 0.4 }
-      )
-      .progress(1);
-    ScrollTrigger.create({
-      start: "top top",
-      end: "max",
-      onUpdate: (self) => {
-        if (self.direction === -1) {
-          showNav.play();
-        } else {
-          showNav.reverse();
-        }
-      },
-    });
-  }, []);
+  // useEffect(() => {
+  //   const showNav = gsap
+  //     .fromTo(
+  //       navbarRef.current,
+  //       { opacity: 0, duration: 1.5 },
+  //       { opacity: 1, duration: 0.4 }
+  //     )
+  //     .progress(1);
+  //   ScrollTrigger.create({
+  //     start: "top top",
+  //     end: "max",
+  //     onUpdate: (self) => {
+  //       if (self.direction === -1) {
+  //         showNav.play();
+  //       } else {
+  //         showNav.reverse();
+  //       }
+  //     },
+  //   });
+  // }, []);
 
   return (
     <header
-      ref={navbarRef}
+      // ref={navbarRef}
       className="sticky top-0 z-30 dark:bg-black bg-white sm:flex sm:justify-between border-b py-3 sm:px-4"
     >
       <Container>
