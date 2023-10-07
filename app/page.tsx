@@ -13,18 +13,15 @@ export default function Home() {
       <section id="hero">
         <HeroSection />
       </section>
-      <section id="about">
-        <AboutSection />
-      </section>
-      <section id="education">
+      <AboutSection />
+      {/* <section id="education">
         <EducationSection />
       </section>
       <section id="skills">
         <SkillsSection />
-      </section>
-      <section id="projects">
-        <ProjectsSection />
-      </section>
+      </section> */}
+      <ProjectsSection />
+      <SkillsSection />
       <section id="achievements">
         <AchievementSection />
       </section>
