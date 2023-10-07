@@ -10,7 +10,7 @@ const HeroSection = () => {
       "<Designer />",
       "<Data Scientist />",
       "<Freelancer />",
-      "<#BuyMeCoffee/>",
+      "<#BuyMeCoffee />",
     ],
     loop: true,
     delaySpeed: 2000,
