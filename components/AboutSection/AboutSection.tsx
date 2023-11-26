@@ -2,20 +2,10 @@
 
 import Image from "next/image";
 import about from "../../public/images/about.svg";
-import { useInView } from "react-intersection-observer";
-import { useActiveSectionContext } from "@/context/active-section-context";
-import { useEffect } from "react";
+import { useSectionInView } from "@/lib/hooks";
 
 const AboutSection = () => {
-  const { ref, inView } = useInView();
-  const { setActiveSection } = useActiveSectionContext();
-
-  useEffect(() => {
-    if (inView) {
-      setActiveSection("About");
-      console.log("in view");
-    }
-  }, [inView, setActiveSection]);
+  const { ref } = useSectionInView("About");
 
   return (
     <section
