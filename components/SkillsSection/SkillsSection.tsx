@@ -1,4 +1,5 @@
 "use client";
+import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
 
 const skillsData = [
@@ -33,10 +34,12 @@ const fadeInVariations = {
 };
 
 const SkillsSection = () => {
+  const { ref } = useSectionInView("Skills", 0.9);
   return (
     <section
+      ref={ref}
       id="skills"
-      className="flex mt-32 flex-col items-center justify-center mb-28 text-center sm:mb-40 scroll-mt-28"
+      className="flex h-screen mt-32 flex-col items-center justify-center mb-28 text-center sm:mb-40 scroll-mt-0"
     >
       <p className="text-2xl tracking-widest font-bold py-14">SKILLS</p>
       <ul className="flex flex-wrap justify-center gap-2 gap-y-5 text-lg max-w-[55rem] text-black">
@@ -47,7 +50,7 @@ const SkillsSection = () => {
             variants={fadeInVariations}
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             custom={i}
           >
             {skill}
