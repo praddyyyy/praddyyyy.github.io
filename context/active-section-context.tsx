@@ -2,8 +2,7 @@
 
 import { createContext, useContext, useState } from "react";
 import { routes } from "@/components/ui/HeaderNew";
-
-type SectionType = (typeof routes)[number]["label"];
+import type { SectionType } from "@/lib/types";
 
 type ActiveSectionContextProviderProps = {
   children: React.ReactNode;
@@ -12,6 +11,8 @@ type ActiveSectionContextProviderProps = {
 type ActiveSectionContextType = {
   activeSection: SectionType;
   setActiveSection: React.Dispatch<React.SetStateAction<SectionType>>;
+  timeOfLastClick: number;
+  setTimeOfLastClick: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export const ActiveSectionContext =
@@ -21,8 +22,17 @@ const ActiveSectionContextProvider = ({
   children,
 }: ActiveSectionContextProviderProps) => {
   const [activeSection, setActiveSection] = useState<SectionType>("Home");
+  const [timeOfLastClick, setTimeOfLastClick] = useState<number>(0);
+
   return (
-    <ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>
+    <ActiveSectionContext.Provider
+      value={{
+        activeSection,
+        setActiveSection,
+        timeOfLastClick,
+        setTimeOfLastClick,
+      }}
+    >
       {children}
     </ActiveSectionContext.Provider>
   );
