@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Project from "./Project";
 import projectImg from "@/public/images/project.jpg";
+import { useSectionInView } from "@/lib/hooks";
 
 export const projectsData = [
   {
@@ -22,8 +25,13 @@ export const projectsData = [
 ];
 
 const ProjectsSection = () => {
+  const { ref } = useSectionInView("Projects", 0.5);
   return (
-    <section id="projects" className="flex h-screen flex-col items-center justify-evenly scroll-mt-10">
+    <section
+      ref={ref}
+      id="projects"
+      className="flex h-screen flex-col items-center justify-evenly scroll-mt-10"
+    >
       <p className="text-2xl tracking-widest font-bold">PROJECTS</p>
       <div>
         {projectsData.map((project, i) => (
