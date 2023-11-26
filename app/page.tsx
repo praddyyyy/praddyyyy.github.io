@@ -10,24 +10,12 @@ import Container from "@/components/ui/container";
 export default function Home() {
   return (
     <Container>
-      <section id="hero">
-        <HeroSection />
-      </section>
+      <HeroSection />
       <AboutSection />
-      {/* <section id="education">
-        <EducationSection />
-      </section>
-      <section id="skills">
-        <SkillsSection />
-      </section> */}
       <ProjectsSection />
       <SkillsSection />
-      <section id="achievements">
-        <AchievementSection />
-      </section>
-      <section id="contact">
-        <ContactSection />
-      </section>
+      {/* <AchievementSection /> */}
+      <ContactSection />
     </Container>
   );
 }
