@@ -15,7 +15,7 @@ import {
         <DropdownMenuTrigger>
           <Avatar>
             <AvatarImage src="https://avatars.githubusercontent.com/u/31361146?v=4" />
-            <AvatarFallback>JD</AvatarFallback>
+            <AvatarFallback>PA</AvatarFallback>
           </Avatar>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
