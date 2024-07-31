@@ -49,20 +49,20 @@ const ContactSection = () => {
     <section
       ref={ref}
       id="contact"
-      className="h-screen flex flex-col items-center justify-center scroll-mt-12"
+      className="h-screen flex flex-col items-center justify-center scroll-mt-0 sm:scroll-mt-12 px-4 sm:px-0"
     >
       <p className="text-2xl tracking-widest font-bold py-14">CONTACT ME</p>
       <div>
         <p className="mb-10">
           Please contact me directly at{" "}
           <a className="underline" href="mailto:pradeeshxdev@gmail.com">
-            pradeeshxdev@gmail.com
+            i@praddy.dev
           </a>{" "}
           or through this form.
         </p>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            <div className="flex flex-row justify-between">
+            <div className="flex flex-col space-y-4 sm:space-y-0 sm:space-x-4 sm:flex-row justify-between">
               <FormField
                 control={form.control}
                 name="username"
@@ -120,7 +120,7 @@ const ContactSection = () => {
                 </FormItem>
               )}
             />
-            <Button type="submit">Submit</Button>
+            <Button className="w-full" type="submit">Submit</Button>
           </form>
         </Form>
       </div>

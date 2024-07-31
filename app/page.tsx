@@ -12,7 +12,7 @@ export default function Home() {
     <Container>
       <HeroSection />
       <AboutSection />
-      <ProjectsSection />
+      {/* <ProjectsSection /> */}
       <SkillsSection />
       {/* <AchievementSection /> */}
       <ContactSection />

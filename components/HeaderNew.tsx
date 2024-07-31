@@ -18,10 +18,10 @@ export const routes = [
   //   hash: "#education",
   //   label: "Education",
   // },
-  {
-    hash: "#projects",
-    label: "Projects",
-  },
+  // {
+  //   hash: "#projects",
+  //   label: "Projects",
+  // },
   {
     hash: "#skills",
     label: "Skills",
@@ -44,7 +44,7 @@ const HeaderNew = () => {
       <motion.div
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
-        className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-sm border border-teal-500 border-opacity-50 bg-teal-500 bg-opacity-50 shadow-lg shadow-black/[0/3] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[30rem] sm:rounded-full"
+        className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-sm border border-teal-500 border-opacity-50 bg-teal-500 bg-opacity-50 shadow-lg shadow-black/[0/3] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[25rem] sm:rounded-full"
       ></motion.div>
       <nav className="flex fixed top-[0.3rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
         <ul className="flex w-[20rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-200 sm:w-[initial] sm:flex-nowrap sm:gap-5">

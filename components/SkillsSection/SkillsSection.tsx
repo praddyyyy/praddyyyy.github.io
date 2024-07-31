@@ -39,13 +39,13 @@ const SkillsSection = () => {
     <section
       ref={ref}
       id="skills"
-      className="flex h-screen mt-32 flex-col items-center justify-center mb-28 text-center sm:mb-40 scroll-mt-0"
+      className="flex h-screen mt-32 flex-col items-center justify-center mb-28 text-center px-4 sm:px-0 sm:mb-40 scroll-mt-0"
     >
       <p className="text-2xl tracking-widest font-bold py-14">SKILLS</p>
       <ul className="flex flex-wrap justify-center gap-2 gap-y-5 text-lg max-w-[55rem] text-black">
         {skillsData.map((skill, i) => (
           <motion.li
-            className="bg-white opacity-60 border-2 border-white rounded-md px-5 py-2"
+            className="bg-white opacity-60 border-2 border-white rounded-md px-2 py-1 sm:px-5 sm:py-2"
             key={i}
             variants={fadeInVariations}
             initial="initial"

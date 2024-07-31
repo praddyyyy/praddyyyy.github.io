@@ -29,20 +29,20 @@ const HeroSection = () => {
       className="h-screen flex flex-col items-center justify-center"
       id="home"
     >
-      <div className="text-3xl sm:text-6xl text-center font-bold">
-        <p className="text-2xl sm:text-5xl">Hi👋,</p>
+      <div className="text-4xl sm:text-6xl text-center font-bold">
+        <p className="text-3xl sm:text-5xl">Hi👋,</p>
         <p>
           I&apos;m <span className="text-teal-500">Pradeeshwar A</span>
         </p>
       </div>
-      <h1 className="text-lg font-semibold sm:text-4xl sm:font-bold py-3 sm:py-10">
+      <h1 className="text-2xl font-semibold sm:text-4xl sm:font-bold py-3 sm:py-10">
         <span>{text}</span>
         <Cursor cursorColor="#10b981" />
       </h1>
       <div className="py-8 flex flex-row w-[20rem] sm:w-[30rem] justify-evenly items-stretch">
-        <Button className="bg-teal-500 hover:bg-teal-700">
+        {/* <Button className="bg-teal-500 hover:bg-teal-700">
           My Resume <ArrowDownToLine className="h-5 w-5 ml-3" />
-        </Button>
+        </Button> */}
         <div>
           <Button
             size="icon"

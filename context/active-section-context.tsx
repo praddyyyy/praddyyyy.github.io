@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState } from "react";
-import { routes } from "@/components/ui/HeaderNew";
+import { routes } from "@/components/HeaderNew";
 import type { SectionType } from "@/lib/types";
 
 type ActiveSectionContextProviderProps = {

@@ -1,3 +1,3 @@
-import { routes } from "@/components/ui/HeaderNew";
+import { routes } from "@/components/HeaderNew";
 
 export type SectionType = (typeof routes)[number]["label"];
