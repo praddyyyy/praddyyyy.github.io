@@ -39,7 +39,7 @@ const HeroSection = () => {
         <span>{text}</span>
         <Cursor cursorColor="#10b981" />
       </h1>
-      <div className="py-8 flex flex-row w-[30rem] justify-evenly items-stretch">
+      <div className="py-8 flex flex-row w-[20rem] sm:w-[30rem] justify-evenly items-stretch">
         <Button className="bg-teal-500 hover:bg-teal-700">
           My Resume <ArrowDownToLine className="h-5 w-5 ml-3" />
         </Button>

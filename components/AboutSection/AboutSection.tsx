@@ -11,7 +11,7 @@ const AboutSection = () => {
     <section
       id="about"
       ref={ref}
-      className="h-screen mt-8 flex flex-col items-center justify-evenly"
+      className="h-screen mt-8 flex flex-col items-center justify-evenly scroll-mt-28 sm:scroll-mt-0"
     >
       <p className="text-2xl tracking-widest font-bold">ABOUT ME</p>
       <div className="flex flex-col sm:flex-row justify-evenly items-center w-full">

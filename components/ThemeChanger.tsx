@@ -7,7 +7,7 @@ import { useTheme } from "next-themes";
 function ThemeChanger() {
   const { theme, setTheme } = useTheme();
   return (
-    <div className="fixed bottom-[2rem] right-[3rem]">
+    <div className="fixed bottom-3 right-3 sm:bottom-[2rem] sm:right-[3rem]">
       <Button
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         variant="outline"
